@@ -1,4 +1,4 @@
-name: Deploy Next.js to Vercel
+name: Nextjs CI/CD with Vercel
 
 on:
   push:
@@ -9,19 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "21"
-          cache: "npm"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build Next.js app
+      - name: Build Nextjs App
         run: npm run build
 
       - name: Deploy to Vercel
