@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,9 +9,16 @@ export default function Home() {
       <p className="text-lg italic border-l-8 border-l-primary pl-4 bg-gray-100 p-2 rounded">
         Check out my Next CI/CD setup with GitHub Actions and Vercel deployment.
       </p>
-      <Button variant={"link"}>
-        <Github />
-        View CI/CD workflow configuration
+      <Button variant={"link"} asChild>
+        <Link
+          href={
+            "https://github.com/zawzawmyint/next-app-cicd/blob/master/.github/workflows/deploy.yml"
+          }
+          target="_blank"
+        >
+          <Github />
+          View CI/CD workflow configuration
+        </Link>
       </Button>
     </div>
   );
