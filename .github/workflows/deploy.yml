@@ -27,7 +27,13 @@ jobs:
       - name: 🚀 Deploy to Vercel with pre-built output
         run: |
           npm install -g vercel
-          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+          vercel --token=$VERCEL_TOKEN \
+                 --scope $VERCEL_ORG_ID \
+                 -p $VERCEL_PROJECT_ID \
+                 --prod \
+                 --yes \
+                 --cwd . \
+                 --prebuilt
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
