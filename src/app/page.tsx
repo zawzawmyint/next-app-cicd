@@ -12,7 +12,7 @@ export default function Home() {
         Check out my Next CI/CD setup with GitHub Actions and Vercel deployment.
       </p>
 
-      <div className=" p-4 rounded-2xl shadow hover:shadow-lg shadow-primary/20 transition-all duration-500 bg-gray-50">
+      <div className=" p-4 rounded-2xl shadow hover:shadow-lg shadow-primary/20 transition-all duration-500 bg-gray-100">
         <ScrollArea className="h-[400px] max-w-4xl w-full">
           <Workflows />
         </ScrollArea>
